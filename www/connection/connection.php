@@ -6,9 +6,5 @@
 	{
 		die('Unable to connect to Database[' . $db->connect_errno . ']');
 	}
-	else
-	{
-		echo "Connected to Database <br />";
-	}
 
  ?>
