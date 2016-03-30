@@ -78,7 +78,7 @@
                     <div class="welcome_note">
                         Welcome to TODO App
                     </div>
-                    <form method="post">
+                    <form method="post" action="script.php">
                     
                         <div class="login_form">
                             
