@@ -1,0 +1,273 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    /*background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;*/
+}
+
+/* Portrait layout (default) */
+/*.app {
+    background:url(../img/logo.png) no-repeat center top;
+    position:absolute;           
+    left:50%;
+    top:50%;
+    height:50px;                 
+    width:225px;                 
+    text-align:center;
+    padding:180px 0px 0px 0px;   
+    margin:-115px 0px 0px -112px;
+ 
+}*/
+
+
+.main_container {
+    
+ 
+}
+
+h2.welcome_title {
+    text-align: center;
+    background-color: skyblue;
+    width: 100%;
+    height: 60px;
+}
+
+.hilight_area {
+    background-color: gray;
+    height: 60px;
+}
+
+.login_form {
+    /*outline: #1E90FF dotted thick;*/
+    background-color: #fff;
+    /*outline-width: 1px;
+    border-radius: 0px;
+    position: absolute;
+    width: 100%;*/
+    height: 500px;
+
+}
+
+.text_field {
+    height: 50px; 
+    border-top: none; 
+    border-top: none;
+    border-radius: 0px;
+}
+
+.btn_login {
+    border-radius: 0px;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+    width: 100%;
+    background-color: #FF9800;
+}
+
+.details {
+    margin-top: 20px;
+}
+
+.new_user {
+    width: 160px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+.new_user:before {
+    left: -0.5em;
+    margin-left: -50%;
+}
+
+.new_user:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.new_user:before, .new_user:after {
+    color: #2196F3;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 62%;
+    border: 4px solid;
+    border-width: 1px;
+}
+
+.heading {
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 400px)
+{
+.new_user {
+    width: 115px;
+    font-size: 10px;
+}
+}
+
+.btn_sign_up {
+    margin-top: 20px;
+    background-color: #2B6699;
+    border-radius: 0px;
+    width: 100%;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: normal;
+    height: 50px;
+    line-height: 0.9em;
+}
+
+.rem {
+    
+}
+
+.input_stuff {
+    /*margin-top: 10px;
+    border-top: none;*/
+    
+}
+
+.welcome_text {
+    font-family: verdana;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.welcome_note {
+    background-color: #2B6699;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana;
+    font-size: 25px;
+    color: white;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+}
+
+input.my_login {
+    height: 40px;
+    width: 80%;
+    /*margin: 35px;*/
+    border-radius: 0px;
+}
+
+button.login_btn {
+    margin-bottom: 25px;
+    margin-top: 5px;
+    width: 80%;
+    height: 40px;
+}
+
+input.rem_check {
+    text-align: left;
+    /*font-family: Verdana;
+    font-size: 18px;
+    color: #000000;*/
+}
+
+input.my_login:focus {
+    
+}
+
+/* Landscape layout (with min-width) */
+/*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {*/
+    .app {
+        /*background-position:left center;*/
+        /*padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height */
+        /*margin:-90px 0px 0px -198px;   offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+/*}*/
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
