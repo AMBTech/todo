@@ -32,9 +32,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
 
         <title>Hello World</title>
     </head>
@@ -83,34 +83,35 @@
                         <div class="login_form">
                             
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-                                <div class="input-group details" style="">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-user"></span>
-                                    </span>
-                                    <input type="text"  
-                                    class="form-control text_field" 
-                                    id="username" name="username" placeholder="Username Or Email" required title="Enter Valid Email"></input>
-                                </div>
-                                <div class="input-group details" style="">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-lock"></span>
-                                    </span>
-                                    <span class="hilight_area">
-                                    </span>
-                                        <input type="password"  
-                                        class="form-control text_field" id="password" name="password" placeholder="Password"
-                                        required title="Enter Password"></input>
-                                </div>
+                                
+                                <input class="form-control text_field" name="fullname" placeholder="Full Name"
+                                required title="Enter full name"></input>
+                                <input type="text" class="form-control text_field" 
+                                id="username" name="username" placeholder="Email" required title="Enter Valid Email"
+                                ></input>
+                                
+                                <input type="password" class="form-control text_field" id="password" name="password" placeholder="Password"
+                                required title="Enter Password"></input>
 
-                                <input type="checkbox" id="rem" class="rem" style="margin-top: 20px;">Remember password</input>
+                                <input type="password" class="form-control text_field" id="repass" name="repass" placeholder="Re-type Password"
+                                required title="Enter Password"></input>
+
+                                <input class="form-control text_field" name="city" placeholder="City" required title="Enter city"></input>
+
+                                <input class="form-control text_field" name="country" placeholder="Country" 
+                                required title="Enter country"></input>
+
+                                
                                 <br /><br />
-                                <button id="login" type="submit" class="btn btn-lg btn_login" 
+                                <button id="signup" name="signup" type="submit" class="btn btn-lg btn_login" 
                                 style="">
-                                    Sign In
+                                    Create account
                                 </button>
-                                <div class="heading"><h3 class="login_user">New Customer</h3></div>
+                                
+                                <div class="heading"><h3 class="new_user">Already have an account</h3></div>
+                                
 
-                                <button id="new_user" class="btn btn-lg btn_sign_up">Create your account</button>
+                                <button id="login" name="login" class="btn btn-lg btn_sign_up">Login</button>
                             </div>
                                 
                         </div>
