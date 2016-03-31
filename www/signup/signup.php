@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
@@ -78,45 +82,64 @@
                     <div class="welcome_note">
                         Welcome to TODO App
                     </div>
-                    <form method="post" action="script.php">
+                    <div class="login_form">
+                        <form method="post" action="script.php">
                     
-                        <div class="login_form">
                             
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                                 
                                 <input class="form-control text_field" name="fullname" placeholder="Full Name"
                                 required title="Enter full name"></input>
-                                <input type="text" class="form-control text_field" 
-                                id="username" name="username" placeholder="Email" required title="Enter Valid Email"
-                                ></input>
+
+                                <input type="text" class="form-control text_field" id="username" 
+                                name="username" placeholder="Email" required title="Enter Valid Email"></input>
                                 
-                                <input type="password" class="form-control text_field" id="password" name="password" placeholder="Password"
+                                <input type="password" class="form-control text_field" 
+                                id="password" name="password" placeholder="Password"
                                 required title="Enter Password"></input>
 
-                                <input type="password" class="form-control text_field" id="repass" name="repass" placeholder="Re-type Password"
+                                <input type="password" class="form-control text_field" 
+                                id="repass" name="repass" placeholder="Re-type Password"
                                 required title="Enter Password"></input>
 
-                                <input class="form-control text_field" name="city" placeholder="City" required title="Enter city"></input>
+                                <input class="form-control text_field" name="city" 
+                                placeholder="City" required title="Enter city"></input>
 
-                                <input class="form-control text_field" name="country" placeholder="Country" 
-                                required title="Enter country"></input>
+                                <input class="form-control text_field" name="country" 
+                                placeholder="Country" required title="Enter country"></input>
 
+                                <div class="success"
+                                style="color: green; text-align: left;">
+                                    <?php 
+
+                                        if( isset($_SESSION['success']) )
+                                        { 
+                                            echo $_SESSION['success'];
+                                        }
+                                    ?>
+                                </div>
                                 
                                 <br /><br />
-                                <button id="signup" name="signup" type="submit" class="btn btn-lg btn_login" 
+                                <button id="signup" name="signup" onclick="validate()" type="submit" class="btn btn-lg btn_login" 
                                 style="">
                                     Create account
                                 </button>
                                 
-                                <div class="heading"><h3 class="new_user">Already have an account</h3></div>
-                                
-
-                                <button id="login" name="login" class="btn btn-lg btn_sign_up">Login</button>
                             </div>
+                        </form>
                                 
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="heading"><h3 class="new_user">Already have an account</h3></div>
+                                <center>
+                                    <a href="../index.php">
+                                        <button id="login" name="login" class="btn btn-lg btn_sign_up">Login</button>
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
                         </div>
 
-                    </form>
                 </div>
                 <div class="col-sm-3 col-xs-1 col-md-3 col-lg-3"></div>
             </div>
@@ -124,6 +147,19 @@
 
 
     </div>
+
+    <script type="text/javascript">
+        function validate() {
+            var pass = document.getElementById('password').value;
+            var repass = document.getElementById('repass').value;
+            alert(pass);
+
+            if(pass != repass)
+            {
+                alert("Both passwords should be same.");
+            }
+        }
+    </script>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
@@ -36,9 +41,9 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
 
-        <title>Hello World</title>
+        <title>Todo Application</title>
     </head>
-    <body>
+    <body onload="onLoad()">
 
     
         
@@ -47,7 +52,7 @@
             <div class="container">
 
                 <div class="navbar-header">
-                    <a href="/" class="navbar-brand">Brand Name Site</a>
+                    <a href="/" class="navbar-brand">AB Technologies</a>
                     
                     <button class="navbar-toggle" id="navBtn" data-toggle="collapse" data-target="#navHeaderCollapse">
                         <span class="icon-bar"></span>
@@ -78,10 +83,9 @@
                     <div class="welcome_note">
                         Welcome to TODO App
                     </div>
-                    <form method="post">
-                    
-                        <div class="login_form">
-                            
+                    <div class="login_form">
+                        <form method="post" action="login/login.php">
+                        
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                                 <div class="input-group details" style="">
                                     <span class="input-group-addon">
@@ -89,7 +93,7 @@
                                     </span>
                                     <input type="text"  
                                     class="form-control text_field" 
-                                    id="username" name="username" placeholder="Username Or Email" required title="Enter Valid Email"></input>
+                                    id="username" name="username" placeholder="Username Or Email" required></input>
                                 </div>
                                 <div class="input-group details" style="">
                                     <span class="input-group-addon">
@@ -97,25 +101,33 @@
                                     </span>
                                     <span class="hilight_area">
                                     </span>
-                                        <input type="password"  
-                                        class="form-control text_field" id="password" name="password" placeholder="Password"
-                                        required title="Enter Password"></input>
+                                        <input type="password" class="form-control text_field" 
+                                        id="password" name="password" placeholder="Password" required title="Enter Password"></input>
+                                </div>
+
+                                <div class="invalid" name="invalid" 
+                                    style="color: red;"><?php if(isset($_SESSION['invalid_username'])) echo $_SESSION['invalid_username'];?>
                                 </div>
 
                                 <input type="checkbox" id="rem" class="rem" style="margin-top: 20px;">Remember password</input>
                                 <br /><br />
-                                <button id="login" type="submit" class="btn btn-lg btn_login" 
-                                style="">
+                                <button id="login" name="login" type="submit" class="btn btn-lg btn_login">
                                     Sign In
                                 </button>
-                                <div class="heading"><h3 class="login_user">New Customer</h3></div>
-
-                                <button id="new_user" class="btn btn-lg btn_sign_up">Create your account</button>
                             </div>
-                                
+                        </form>
+                        <center>
+                            <div class="heading"><h3 class="login_user">New Customer</h3></div>
+                            <a href="signup/signup.php">
+                                <button id="new_user" class="btn btn-lg btn_sign_up ">
+                                    Create your account
+                                </button>
+                            </a>
+                        </center>
                         </div>
+                        
+                        
 
-                    </form>
                 </div>
                 <div class="col-sm-3 col-xs-1 col-md-3 col-lg-3"></div>
             </div>
@@ -123,6 +135,16 @@
 
 
     </div>
+
+    <script type="text/javascript">
+        function onLoad() {
+            <?php
+                $_SESSION = array();
+                session_unset();
+                session_destroy();
+            ?>
+        }
+    </script>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

@@ -48,7 +48,8 @@ if(isset($_POST['signup'])) {
 
 	if($duplicate == true)
 	{
-		echo "Username taken.";
+		$_SESSION['success'] = "Username taken.";
+		echo $_SESSION['success'];
 		header('Location: signup.php');
 	}
 	else
@@ -56,9 +57,12 @@ if(isset($_POST['signup'])) {
 
 		if( $result = mysqli_query($mysqli, $query) )
 		{
-			$count = mysqli_affected_rows($mysqli);
+			/*$count = mysqli_affected_rows($mysqli);
 
-			echo $count;
+			echo $count;*/
+			$_SESSION['success'] = "Account created successfully, click LOGIN to continue.";
+			header("Location: signup.php");
+			exit();
 		}
 		else
 		{

@@ -21,7 +21,7 @@
 }
 
 body {
-    background-color: #F9F9F9;
+    background-color: gray; /*#F9F9F9;*/
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -108,7 +108,7 @@ h2.welcome_title {
 }
 
 .new_user {
-    width: 250px;
+    width: 60%;
     font-size: 14px;
     font-weight: 600;
     display: inline-block;
@@ -137,13 +137,13 @@ h2.welcome_title {
 
 @media (max-width: 450px)
 {
-.new_user {
-    width: 115px;
-    font-size: 10px;
-}
-.new_user:before, .new_user:after {
-    width: 40%;
-}
+    .new_user {
+        width: 115px;
+        font-size: 10px;
+    }
+    .new_user:before, .new_user:after {
+        width: 40%;
+    }
 }
 
 @media (min-width: 320px)
@@ -224,6 +224,7 @@ h2.welcome_title {
 }
 
 .login_user {
+    margin-top: 30px;
     width: 160px;
     font-size: 14px;
     font-weight: 600;
@@ -252,7 +253,7 @@ h2.welcome_title {
 }
 
 .heading {
-    margin-top: 20px;
+    margin-top: 0px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -269,7 +270,7 @@ h2.welcome_title {
     margin-top: 20px;
     background-color: #2B6699;
     border-radius: 0px;
-    width: 100%;
+    width: 95%;
     color: #FFF;
     font-size: 18px;
     font-weight: normal;
@@ -278,7 +279,7 @@ h2.welcome_title {
 }
 
 .rem {
-    
+    margin-top: 20px;
 }
 
 .input_stuff {
