@@ -64,7 +64,7 @@
 
                 <div class="collapse navbar-collapse navHeaderCollapse" id="navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a data-toggle="collapse" href="#">Home</a></li>
+                        <li><a data-toggle="collapse" href="home.php">Home</a></li>
                         <li><a data-toggle="collapse" href="#">About</a></li>
                         <li><a data-toggle="collapse" href="#">Social Media</a></li>
                         <!-- <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home </a></li>
@@ -114,6 +114,11 @@
                                 <button id="login" name="login" type="submit" class="btn btn-lg btn_login">
                                     Sign In
                                 </button>
+                                <div class="forget" style="margin-top: 20px;">
+                                    <a href="forget/auth.php">
+                                        <label>Forgot Password</label>
+                                    </a>
+                                </div>
                             </div>
                         </form>
                         <center>
