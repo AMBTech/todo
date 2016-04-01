@@ -20,6 +20,13 @@ include("../connection/connection.php");
 			if( $result = mysqli_query( $mysqli, $query ) )
 			{
 				// echo $mysqli->affected_rows;
+				$name = mysqli_fetch_row($result)[1];
+				$email = mysqli_fetch_row($result)[2];
+				$subject = "Password changed";
+
+				$msg = "Hello " . $name . "<br>Your password is changed successfully.<br><br>Regards";
+				mail($email, $subject, $msg);
+				
 				header("Location: ../index.php");
 			}
 			else

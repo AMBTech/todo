@@ -38,7 +38,8 @@ if(isset($_POST['signup'])) {
 
 	if($password_match == 1)
 	{
-		$temp = "INSERT INTO login (name, username, password, repass, city, country) VALUES ( '%s', '%s', '%s', '%s', '%s', '%s')";
+		$temp = "INSERT INTO login (name, username, password, repass, city, country) 
+		VALUES ( '%s', '%s', '%s', '%s', '%s', '%s')";
 
 		$query = sprintf( $temp, $name, $username, MD5($pass), MD5($repass), $city, $country );
 
@@ -55,16 +56,11 @@ if(isset($_POST['signup'])) {
 			}
 		}
 
-
-	
-
-
-
 		if($duplicate == 1)
 		{
-			$_SESSION['status'] = "Username taken.";
+			$_SESSION['status'] = "Username taken. Login to continue or reset your password.";
 			echo $_SESSION['status'];
-			header('Location: signup.php');
+			header('Location: ../signup.php');
 		}
 		else
 		{

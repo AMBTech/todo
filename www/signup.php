@@ -60,7 +60,7 @@
                         Welcome to TODO App
                     </div>
                     <div class="login_form">
-                        <form method="post" action="script.php">
+                        <form method="post" action="scripts/script.php">
                     
                             
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">

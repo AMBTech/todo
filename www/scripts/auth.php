@@ -12,6 +12,7 @@ if(isset($_POST['email']))
 
 	if( $result = mysqli_query( $mysqli, $query ) )
 	{
+		echo mysqli_num_rows($result);
 		if( mysqli_num_rows($result) == 1 )
 		{
 			$string = "Email exists";
