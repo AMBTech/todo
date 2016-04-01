@@ -16,7 +16,7 @@ session_start();
 </head>
 <body>
 
-<?php include_once('header.php'); ?>
+<?php include_once('header/header.php'); ?>
 
 <div class="container todo_list">
 	<ul>
@@ -40,7 +40,7 @@ session_start();
 	?>
 </h1>
 
-<form method="POST" action="scripts/logout.php">
+<form method="POST" action="signout/logout.php">
 	<button class="btn btn-primary" name="login_status" id="login_status" onclick="func()">
 		<?php
 			if(isset($_SESSION['username']))

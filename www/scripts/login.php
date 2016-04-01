@@ -13,13 +13,16 @@ if(isset($_POST['login']))
 
 	if($result = $mysqli->query($query))
 	{
+		$FullName = mysqli_fetch_row($result)[1];
+		
+
 		$row_cnt = $result->num_rows;
 		
 
 		if($row_cnt == 1)
 		{
-			echo "Successfully logged in";
-			$_SESSION['username'] = $username;
+			// echo "Successfully logged in";
+			$_SESSION['username'] = strtoupper($FullName);
 			header("Location: ../home.php");
 			exit();
 		}

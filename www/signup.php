@@ -49,7 +49,7 @@
     <div class="app">
         
         <?php 
-            include_once('../header/header.php'); 
+            include_once('header.php'); 
         ?>
 
         <div class="container main_container">
@@ -109,7 +109,7 @@
                             <div class="col-lg-12">
                                 <div class="heading"><h3 class="new_user">Already have an account</h3></div>
                                 <center>
-                                    <a href="../index.php">
+                                    <a href="index.php">
                                         <button id="login" name="login" class="btn btn-lg btn_sign_up">Login</button>
                                     </a>
                                 </center>
@@ -138,12 +138,6 @@
         }
     </script>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
-        <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
     </body>
 </html>

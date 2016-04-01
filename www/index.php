@@ -33,11 +33,6 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
         <title>Todo Application</title>
     </head>
@@ -47,17 +42,17 @@
         
     <div class="app">
         
-        <?php include_once('header/header.php'); ?>
+        <?php include_once('header.php'); ?>
 
         <div class="container main_container">
             <div class="row">
-                <div class="col-sm-3 col-xs-1 col-md-3 col-lg-3"></div>
-                <div class="col-sm-6 col-xs-10 col-md-6 col-lg-6">
+                <div class="col-sm-1 col-xs-0 col-md-2 col-lg-3"></div>
+                <div class="col-sm-10 col-xs-12 col-md-8 col-lg-6">
                     <div class="welcome_note">
                         Welcome to TODO App
                     </div>
                     <div class="login_form">
-                        <form method="post" action="login/login.php">
+                        <form method="post" action="scripts/login.php">
                         
                             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                                 <div class="input-group details" style="">
@@ -89,7 +84,7 @@
                                 </button>
                                 <div class="forget" style="margin-top: 30px; font-weight: bold;">
                                     <p>
-                                        <a href="forget/auth.php">
+                                        <a href="forget_pass.php">
                                             Forgot Your Password?
                                         </a>
                                     </p>
@@ -98,7 +93,7 @@
                         </form>
                         <center>
                             <div class="heading"><h3 class="login_user">New User</h3></div>
-                            <a href="signup/signup.php">
+                            <a href="signup.php">
                                 <button id="new_user" class="btn btn-lg btn_sign_up ">
                                     Create your account
                                 </button>
@@ -109,7 +104,7 @@
                         
 
                 </div>
-                <div class="col-sm-3 col-xs-1 col-md-3 col-lg-3"></div>
+                <div class="col-sm-1 col-xs-0 col-md-2 col-lg-3"></div>
             </div>
         </div>
 
@@ -126,11 +121,6 @@
         }
     </script>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 
     </body>
 </html>

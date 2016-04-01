@@ -2,6 +2,13 @@
 <html>
 <head>
     <title></title>
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
 </head>
 <body>
 
@@ -17,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/" class="navbar-brand header_content"
+                    <a href="home.php" class="navbar-brand header_content"
                     style="color: #FFF; font-size: 22px; line-height: 25px;">AB Technologies</a>
                 </div>
                 
@@ -46,5 +53,11 @@
         </div>
     </nav>
 
-</body>
-</html>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+
