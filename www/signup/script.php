@@ -5,15 +5,16 @@ session_start();
 include ('../connection/connection.php');
 
 $duplicate = false;
+$password_match = false;
 
 if(isset($_POST['signup'])) {
 
-	$name = $_POST['fullname'];
-	$username = $_POST['username'];
-	$pass = $_POST['password'];
-	$repass = $_POST['repass'];
-	$city = $_POST['city'];
-	$country = $_POST['country'];
+	$name 		= $_POST['fullname'];
+	$username 	= $_POST['username'];
+	$pass 		= $_POST['password'];
+	$repass 	= $_POST['repass'];
+	$city 		= $_POST['city'];
+	$country 	= $_POST['country'];
 
 	
 
@@ -28,46 +29,66 @@ if(isset($_POST['signup'])) {
 
 	$duplicateQuery = "SELECT username FROM login WHERE username = '". $username ."'";
 
-	$temp = "INSERT INTO login (name, username, password, repass, city, country) VALUES ( '%s', '%s', '%s', '%s', '%s', '%s')";
 
-	$query = sprintf( $temp, $name, $username, MD5($pass), MD5($repass), $city, $country );
-
-
-	if( $result = mysqli_query( $mysqli, $duplicateQuery ) )
+	if( $pass == $repass )
 	{
-		echo "<br>num rows" . mysqli_num_rows($result) . "<br>";
-		if( mysqli_num_rows($result) == 1 )
-			$duplicate = true;
-	}
-	else
-	{
-		$duplicate = false;
+		$password_match = true;
 	}
 
 
-
-	if($duplicate == true)
+	if($password_match == 1)
 	{
-		$_SESSION['success'] = "Username taken.";
-		echo $_SESSION['success'];
-		header('Location: signup.php');
-	}
-	else
-	{
+		$temp = "INSERT INTO login (name, username, password, repass, city, country) VALUES ( '%s', '%s', '%s', '%s', '%s', '%s')";
 
-		if( $result = mysqli_query($mysqli, $query) )
+		$query = sprintf( $temp, $name, $username, MD5($pass), MD5($repass), $city, $country );
+
+		if( $result = mysqli_query( $mysqli, $duplicateQuery ) )
 		{
-			/*$count = mysqli_affected_rows($mysqli);
+			echo "<br>num rows" . mysqli_num_rows($result) . "<br>";
+			if( mysqli_num_rows($result) > 0 )
+			{
+				$duplicate = true;
+			}
+			else
+			{
+				$duplicate = false;
+			}
+		}
 
-			echo $count;*/
-			$_SESSION['success'] = "Account created successfully, click LOGIN to continue.";
-			header("Location: signup.php");
-			exit();
+
+	
+
+
+
+		if($duplicate == 1)
+		{
+			$_SESSION['status'] = "Username taken.";
+			echo $_SESSION['status'];
+			header('Location: signup.php');
 		}
 		else
 		{
-			echo mysqli_error($mysqli);
+			if( $result = mysqli_query($mysqli, $query) )
+			{
+				$count = mysqli_affected_rows($mysqli);
+
+				echo $count;
+				
+				$_SESSION['status'] = "Account created successfully, click LOGIN to continue.";
+				header("Location: signup.php");
+				exit();
+			}
+			else
+			{
+				echo mysqli_error($mysqli);
+			}
 		}
+	}
+	else
+	{
+		$_SESSION['status'] = "Enter same password to continue.";
+		header("Location: signup.php");
+		exit();
 	}
 
 	/*if( mysqli_query($mysqli, $create_query) )

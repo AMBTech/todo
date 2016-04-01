@@ -47,33 +47,10 @@
     
         
     <div class="app">
-        <div class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-
-                <div class="navbar-header">
-                    <a href="/" class="navbar-brand">Brand Name Site</a>
-                    
-                    <button class="navbar-toggle" id="navBtn" data-toggle="collapse" data-target="#navHeaderCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                
-
-                <div class="collapse navbar-collapse navHeaderCollapse" id="navHeaderCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a data-toggle="collapse" href="#">Home</a></li>
-                        <li><a data-toggle="collapse" href="#">About</a></li>
-                        <li><a data-toggle="collapse" href="#">Social Media</a></li>
-                        <!-- <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-book"></span> About </a></li> -->
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
+        
+        <?php 
+            include_once('../header/header.php'); 
+        ?>
 
         <div class="container main_container">
             <div class="row">
@@ -109,12 +86,12 @@
                                 placeholder="Country" required title="Enter country"></input>
 
                                 <div class="success"
-                                style="color: green; text-align: left;">
+                                    style="color: black; text-align: left; margin-top: 10px;">
                                     <?php 
 
-                                        if( isset($_SESSION['success']) )
+                                        if( isset($_SESSION['status']) )
                                         { 
-                                            echo $_SESSION['success'];
+                                            echo $_SESSION['status'];
                                         }
                                     ?>
                                 </div>

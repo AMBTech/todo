@@ -33,13 +33,11 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
         <title>Todo Application</title>
     </head>
@@ -48,33 +46,8 @@
     
         
     <div class="app">
-        <div class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-
-                <div class="navbar-header">
-                    <a href="/" class="navbar-brand">AB Technologies</a>
-                    
-                    <button class="navbar-toggle" id="navBtn" data-toggle="collapse" data-target="#navHeaderCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                
-
-                <div class="collapse navbar-collapse navHeaderCollapse" id="navHeaderCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a data-toggle="collapse" href="home.php">Home</a></li>
-                        <li><a data-toggle="collapse" href="#">About</a></li>
-                        <li><a data-toggle="collapse" href="#">Social Media</a></li>
-                        <!-- <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-book"></span> About </a></li> -->
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
+        
+        <?php include_once('header/header.php'); ?>
 
         <div class="container main_container">
             <div class="row">
@@ -114,15 +87,17 @@
                                 <button id="login" name="login" type="submit" class="btn btn-lg btn_login">
                                     Sign In
                                 </button>
-                                <div class="forget" style="margin-top: 20px;">
-                                    <a href="forget/auth.php">
-                                        <label>Forgot Password</label>
-                                    </a>
+                                <div class="forget" style="margin-top: 30px; font-weight: bold;">
+                                    <p>
+                                        <a href="forget/auth.php">
+                                            Forgot Your Password?
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </form>
                         <center>
-                            <div class="heading"><h3 class="login_user">New Customer</h3></div>
+                            <div class="heading"><h3 class="login_user">New User</h3></div>
                             <a href="signup/signup.php">
                                 <button id="new_user" class="btn btn-lg btn_sign_up ">
                                     Create your account
@@ -153,10 +128,9 @@
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
-        <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
     </body>
 </html>
