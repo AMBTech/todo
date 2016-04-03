@@ -42,7 +42,7 @@
         
     <div class="app">
         
-        <?php include_once('header.php'); ?>
+        <?php include_once('sidebar.php'); ?>
 
         <div class="container main_container">
             <div class="row">
@@ -70,7 +70,8 @@
                                     <span class="hilight_area">
                                     </span>
                                         <input type="password" class="form-control text_field" 
-                                        id="password" name="password" placeholder="Password" required title="Enter Password"></input>
+                                        id="password" name="password" placeholder="Password" 
+                                        required title="Enter Password"></input>
                                 </div>
 
                                 <div class="invalid" name="invalid" 

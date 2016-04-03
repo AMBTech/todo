@@ -7,19 +7,27 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.min.css">
         <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
+        <style type="text/css">
+            .about:hover, .home:hover, .social:hover {
+                background: rgba(255,255,255,0.2);
+            }
+        </style>
 
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse navbar-default">
-        <div class="container-flued" style="background-color: #2B6699; ">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-flued" style="background-color: #2B6699;">
             <div class="container" >
 
                 <div class="navbar-header">
                     
                     <button class="navbar-toggle collapsed" id="navBtn" data-toggle="collapse" 
-                    data-target="#navbar-collapse" aria-expanded="false">
+                    data-target="#navbar-collapse" aria-expanded="false"
+                    style="border: 0px;">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -31,17 +39,33 @@
 
                 <div class="collapse navbar-collapse no-padding" id="navbar-collapse" style="";>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="home.php" style="color: #FFF; font-size: 20px; line-height: 25px;">
+                        <!-- <li class="home"><a href="home.php" style="color: #FFF; font-size: 20px; line-height: 25px;">
+                        <span class="glyphicon glyphicon-home"></span>
                                 Home
                             </a>
                         </li>
-                        <li><a href="#" style="color: #FFF; font-size: 20px; line-height: 25px;">
+                        <li class="about"><a href="#" 
+                        style="color: #FFF; font-size: 20px; line-height: 25px;">
                                 About
                             </a>
                         </li>
-                        <li><a href="#" style="color: #FFF; font-size: 20px; line-height: 25px;">
+                        <li class="social"><a href="#" style="color: #FFF; font-size: 20px; line-height: 25px;">
                                 Social Media
                             </a>
+                        </li> -->
+                        <li>
+                            <form method="POST" action="scripts/logout.php" >
+                                <button class="btn btn-default" name="login_status" id="login_status" onclick="func()"
+                                style="color: #FFF; background-color: #FFF; 
+                                color: #000; border-radius: 0px; border: 0px; margin: 10px;">
+                                    <?php
+                                        if(isset($_SESSION['username']))
+                                            echo 'Sign Out';
+                                        else
+                                            echo 'Log In';
+                                    ?>
+                                </button>
+                            </form>
                         </li>
                         <!-- <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home </a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-book"></span> About </a></li> -->
@@ -52,6 +76,8 @@
             </div>
         </div>
     </nav>
+
+
 
 
         <script type="text/javascript" src="cordova.js"></script>
