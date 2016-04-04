@@ -74,7 +74,7 @@ body {
     border-radius: 5px;
 }
 
-.description, .title {
+.title {
     width: 100%;
     border: 1px solid #56C0E3;
     margin: 5px;
@@ -82,8 +82,14 @@ body {
 }
 
 .title:focus {
-    background-color: gray;
-    color: #FFF;
+    background-color: #F0F0F0;
+    color: #000;
+}
+
+#btn_delete {
+    margin-left: 80%;
+    margin-top: 3%;
+    height: 30px;
 }
 
 .description {

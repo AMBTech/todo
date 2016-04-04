@@ -55,6 +55,15 @@
                         </li> -->
                         <li>
                             <form method="POST" action="scripts/logout.php" >
+                                <p style="font-family: Verdana; font-size: 16px; color: #FFF;
+                                    position: absolute; margin-left: -180px; line-height: 50px;">
+                                    <?php 
+                                        if(isset($_SESSION['username']))
+                                        {
+                                            echo $_SESSION['username'];
+                                        }
+                                    ?>
+                                </p>
                                 <button class="btn btn-default" name="login_status" id="login_status" onclick="func()"
                                 style="color: #FFF; background-color: #FFF; 
                                 color: #000; border-radius: 0px; border: 0px; margin: 10px;">

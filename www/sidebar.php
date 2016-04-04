@@ -44,15 +44,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+        </div> -->
+        
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Categories
                     </a>
                 </li>
                 <li>
@@ -91,7 +91,7 @@
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
-            // $("#wrapper").toggleClass("toggled");
+            $("#wrapper").toggleClass("toggled");
         if($(this).hasClass('wrapper')){
             $(this).find('span').removeClass('glyphicon glyphicon-chevron-left').addClass('glyphicon glyphicon-chevron-right');
         }

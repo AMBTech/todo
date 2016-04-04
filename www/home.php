@@ -1,5 +1,8 @@
 <?php
-session_start();
+	session_start();
+	include_once('connection/connection.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +54,22 @@ session_start();
 			</div> -->
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-10">
-			<h1>Add New Task</h1>
-			<center>
-			<div class="newTask">
-				<input id="title" class="form-control title" placeholder="Enter task and press enter"></input>
+			<?php if(isset($_SESSION['username'])) 
+				echo '<h1>Add New Task</h1>
+				<center>
+				<div class="newTask">
 				
-			</div>
+					<form method="POST" action="scripts/new_task.php">
+						<input id="title" name="title" class="form-control title" 
+						placeholder="Enter task and press enter"></input>
+					</form>
+				</div>';
+				
+					else {}
+				?>
 
-				<button id="addTask" class="btn btn-primary" onclick="clickme()">
-				<span class="glyphicon glyphicon-envelope"></span> Add Task</button>
+				<!-- <button id="addTask" class="btn btn-primary" onclick="clickme()">
+				<span class="glyphicon glyphicon-envelope"></span> Add Task</button> -->
 			</center>
 		</div>
 	</div>
@@ -67,14 +77,37 @@ session_start();
 	<div class="row">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-10">
-			<div class="taskList" style="background-color: #EFE; border: 1px solid lightgray; border-radius: 5px;">
-				<p>
-					<input type="checkbox"></input>
-					New Task
-					<button class="btn btn-default btn-xs">Delete</button><br/>
+
+
+					
+					<?php 
+						$query = "SELECT * FROM posts";
+
+						$result = mysqli_query($mysqli, $query);
+						// echo mysqli_num_rows($result);
+						
+						$count = 0;
+
+						while($count <= mysqli_num_rows($result))
+						{
+						echo '<div class="taskList" style="background-color: #EFE; border: 1px solid lightgray; 
+						border-radius: 5px; margin-bottom: 10px;">';
+						echo '<p>';
+						echo '<input type="checkbox" style="margin-top: 10px;"></input>
+							<p style="position: absolute; margin-left: 20px;">' . htmlspecialchars_decode(mysqli_fetch_row($result)[1]) .'</p>';
+							// echo mysqli_fetch_row($result)[1] . '	';
+							// echo mysqli_fetch_row($result)[2] . '<br>';
+							$count++;
+					?>
+
+					<button class="btn btn-default btn-xs" id="btn_delete">Delete</button><br/>
 					<p style="margin-left: 15px; margin-top: -10px;">Date: 12-02-2016</p>
-				</p>
+					</p>
+
 			</div>
+				<?php
+						}
+					?>
 		</div>
 	</div>
 

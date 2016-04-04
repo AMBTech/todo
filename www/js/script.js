@@ -8,6 +8,7 @@ function addNewItem(list, title, description) {
 
     
     list.appendChild(Title, Description);
+
 }
 
 var newItem = document.getElementById("addTask");
